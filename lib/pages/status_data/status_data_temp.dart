@@ -1,7 +1,9 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
-import 'package:iot_teng/component/btn_info_status_data.dart';
-import 'package:iot_teng/component/top_navbar.dart';
+import 'package:iot_teng/pages/analytics_screen.dart';
+import '../../component/btn_info_status_data.dart';
+import '../../component/top_navbar.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:fl_chart/src/chart/line_chart/line_chart.dart';
 
 class StatusDataTemp extends StatefulWidget {
   const StatusDataTemp({Key? key}) : super(key: key);
@@ -17,9 +19,38 @@ class _StatusDataTempState extends State<StatusDataTemp> {
       child: Scaffold(
         body: Column(
           children: [
-            TopNavbar(icon1: Icons.close, text1: 'Temperature'),
+            TopNavbar(
+              icon1: Icons.close,
+              text1: 'Temperature',
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => AnalyticsScreen()),
+                );
+              },
+            ),
             SizedBox(
               height: 20,
+            ),
+            Padding(
+              padding:
+              const EdgeInsets.only(top: 20, left: 20, bottom: 20),
+              child: Row(
+                children: [
+                  Text(
+                    'Last 10 Days',
+                    style: TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Color(0xFF403572),
+                    ),
+                  ),
+                  Icon(
+                    Icons.keyboard_arrow_down_rounded,
+                    color: Color(0xFF595085),
+                  )
+                ],
+              ),
             ),
             Padding(
               padding: const EdgeInsets.only(right: 30),
@@ -44,7 +75,8 @@ class _StatusDataTempState extends State<StatusDataTemp> {
                       ),
                       borderData: FlBorderData(
                         show: true,
-                        border: Border.all(color: Colors.blue, width: 1),
+                        border:
+                        Border.all(color: Colors.blue, width: 1),
                       ),
                       minX: 0,
                       maxX: 10,
@@ -73,6 +105,7 @@ class _StatusDataTempState extends State<StatusDataTemp> {
                 ),
               ),
             ),
+
             SizedBox(
               height: 20,
             ),
