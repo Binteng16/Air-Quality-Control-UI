@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+
+class ConActFilter extends StatelessWidget {
+  const ConActFilter({Key? key, required this.text1, required this.text2, this.onpressed})
+      : super(key: key);
+  final String text1, text2;
+  final VoidCallback? onpressed;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 70,
+      width: 350,
+      decoration: BoxDecoration(
+          color: Color(0xFFFFFFFF),
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.5),
+              spreadRadius: 1,
+              blurRadius: 10,
+              offset: Offset(0, 3),
+            ),
+          ]),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsets.only(left: 15, top: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  text1,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 15,
+                    color: Colors.black,
+                  ),
+                ),
+                Text(
+                  text2,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 25,
+                    color: Colors.black,
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 10),
+            child: InkWell(
+              onTap: onpressed,
+                child: Icon(Icons.arrow_forward_ios)),
+          )
+        ],
+      ),
+    );
+  }
+}
