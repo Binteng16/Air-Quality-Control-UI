@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 
-class StatusAnalytics extends StatelessWidget {
-  const StatusAnalytics(
-      {Key? key, required this.text1, required this.text2, required this.icon1, this.onPressed})
-      : super(key: key);
+class BtnInfoStatusData extends StatelessWidget {
+  const BtnInfoStatusData({Key? key, required this.text1, required this.text2, required this.icon1}) : super(key: key);
   final String text1, text2;
   final IconData icon1;
-  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
+      height: 70,
       width: 350,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
@@ -30,7 +27,7 @@ class StatusAnalytics extends StatelessWidget {
           children: <Widget>[
             Icon(
               icon1,
-              size: 50,
+              size: 40,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 15),
@@ -42,12 +39,13 @@ class StatusAnalytics extends StatelessWidget {
                     text1,
                     style: TextStyle(
                       fontSize: 15,
+                      fontWeight: FontWeight.w300,
                     ),
                   ),
                   Text(
                     text2,
                     style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 25,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -55,9 +53,7 @@ class StatusAnalytics extends StatelessWidget {
               ),
             ),
             Spacer(),
-            InkWell(
-                onTap: onPressed,
-                child: Icon(Icons.arrow_forward_ios)),
+            InkWell(onTap: () {}, child: Icon(Icons.more_vert)),
           ],
         ),
       ),

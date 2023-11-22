@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iot_teng/pages/Profile_widget/configure_alert.dart';
 
 import '../component/btn_apply_filter.dart';
 import 'Profile_widget/device_manager.dart';
@@ -69,6 +70,12 @@ class _PageProfileState extends State<PageProfile> {
             ),
             BtnApplyFilter(
               text1: 'Configure Alert',
+              onpressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => ConfigureAlert()),
+                );
+              },
             ),
             SizedBox(
               height: 10,
