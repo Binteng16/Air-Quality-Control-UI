@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iot_teng/pages/page_profile.dart';
 
 class TopNavbar extends StatelessWidget {
    const TopNavbar({super.key, required this.icon1, required this.text1});
@@ -32,7 +33,10 @@ class TopNavbar extends StatelessWidget {
             ),
             IconButton(
               onPressed: () {
-
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => PageProfile()),
+                );
               },
               icon: Icon(
                 Icons.person,

@@ -5,10 +5,12 @@ class ActivityCon extends StatelessWidget {
       {Key? key,
       required this.text1,
       required this.text2,
-      required this.iconanalytics})
+      required this.iconanalytics,
+      required this.onpressed})
       : super(key: key);
   final String text1, text2;
   final IconData iconanalytics;
+  final VoidCallback onpressed;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +59,9 @@ class ActivityCon extends StatelessWidget {
               ),
             ),
             Spacer(),
-            Icon(Icons.more_vert)
+            InkWell(
+              onTap: onpressed,
+                child: Icon(Icons.more_vert))
           ],
         ),
       ),

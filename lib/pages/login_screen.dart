@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:iot_teng/component/google_login.dart';
+import 'package:iot_teng/pages/dashboard_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -27,7 +28,14 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(height: 40,),
-                GoogleLogin(text1: 'Log in With Google', image1: 'assets/icon_google.png'),
+                InkWell(
+                    onTap: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => Dashboard()),
+                      );
+                    },
+                    child: GoogleLogin(text1: 'Log in With Google', image1: 'assets/icon_google.png')),
                 SizedBox(height: 10,),
                 GoogleLogin(text1: 'Log in With Github', image1: 'assets/icon_github.png'),
               ],
