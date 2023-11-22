@@ -18,11 +18,16 @@ class _ActivityLogDetailSensorState extends State<ActivityLogDetailSensor> {
       child: Scaffold(
         body: Column(
           children: <Widget>[
-            TopNavbar(icon1: Icons.close, text1: 'Sensor Detected'),
+            TopNavbar(
+                icon1: Icons.close,
+                text1: 'Sensor Detected',
+                onPressed: () {
+                  Navigator.pop(context);
+                }),
             Padding(
                 padding: const EdgeInsets.only(top: 70),
                 child: ConActivityDetail(
-                    img: Image(image: AssetImage('assets/online.png')))),
+                    img: AssetImage('assets/online.png'))),
           ],
         ),
       ),

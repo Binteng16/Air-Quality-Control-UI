@@ -16,11 +16,16 @@ class _ActivityLogDetail1State extends State<ActivityLogDetail1> {
       child: Scaffold(
         body: Column(
           children: <Widget>[
-            TopNavbar(icon1: Icons.close, text1: 'Gas Leak Detected'),
+            TopNavbar(
+                icon1: Icons.close,
+                text1: 'Gas Leak Detected',
+                onPressed: () {
+                  Navigator.pop(context);
+                }),
             Padding(
                 padding: const EdgeInsets.only(top: 70),
                 child: ConActivityDetail(
-                    img: Image(image: AssetImage('assets/gasleak.png')))),
+                  img: AssetImage('assets/gasleak.png'),),),
           ],
         ),
       ),

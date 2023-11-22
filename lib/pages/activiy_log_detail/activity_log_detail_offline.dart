@@ -22,7 +22,7 @@ class _ActivityLogDetailOfflineState extends State<ActivityLogDetailOffline> {
             Padding(
                 padding: const EdgeInsets.only(top: 70),
                 child: ConActivityDetail(
-                    img: Image(image: AssetImage('assets/offline.png')))),
+                    img: AssetImage('assets/offline.png'))),
           ],
         ),
       ),

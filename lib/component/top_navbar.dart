@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:iot_teng/pages/page_profile.dart';
 
 class TopNavbar extends StatelessWidget {
-   const TopNavbar({super.key, required this.icon1, required this.text1});
+   const TopNavbar({super.key, required this.icon1, required this.text1, this.onPressed});
 
    final String text1;
    final IconData icon1;
+   final VoidCallback? onPressed;
 
    @override
   Widget build(BuildContext context) {
@@ -16,9 +17,7 @@ class TopNavbar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
-              onPressed: () {
-
-              },
+              onPressed: onPressed,
               icon: Icon(
                 icon1,
                 size: 30,

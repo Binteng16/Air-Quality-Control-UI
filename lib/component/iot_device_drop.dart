@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../pages/Profile_widget/device_manager.dart';
+
 class DevDropD extends StatelessWidget {
   const DevDropD({super.key});
 
@@ -29,7 +31,14 @@ class DevDropD extends StatelessWidget {
                 fontWeight: FontWeight.bold
             ),),
             Spacer(),
-            Icon(Icons.keyboard_arrow_down),
+            InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => DeviceManager()),
+                  );
+                },
+                child: Icon(Icons.keyboard_arrow_down)),
           ],
         ),
       ),

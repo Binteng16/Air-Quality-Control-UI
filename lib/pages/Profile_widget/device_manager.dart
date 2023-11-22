@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:iot_teng/component/btn_devicemanager.dart';
 
 class DeviceManager extends StatefulWidget {
   const DeviceManager({Key? key}) : super(key: key);
@@ -19,7 +20,9 @@ class _DeviceManagerState extends State<DeviceManager> {
               child: Row(
                 children: <Widget>[
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                     icon: Icon(
                       Icons.arrow_back,
                       size: 30,
@@ -39,6 +42,10 @@ class _DeviceManagerState extends State<DeviceManager> {
                 ],
               ),
             ),
+            SizedBox(height: 20,),
+            BtnDevicemanager(text1: 'IOT-Device-1'),
+            SizedBox(height: 10,),
+            BtnDevicemanager(text1: 'IOT-Device-2'),
           ],
         ),
       ),

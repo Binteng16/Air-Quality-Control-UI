@@ -17,7 +17,12 @@ class _ActivityFilter3State extends State<ActivityFilter3> {
       child: Scaffold(
         body: Column(
           children: <Widget>[
-            TopNavbar(icon1: Icons.arrow_back, text1: 'Activity Filter'),
+            TopNavbar(
+                icon1: Icons.arrow_back,
+                text1: 'Activity Filter',
+                onPressed: () {
+                  Navigator.pop(context);
+                }),
             SizedBox(
               height: 30,
             ),
@@ -29,7 +34,9 @@ class _ActivityFilter3State extends State<ActivityFilter3> {
             SizedBox(
               height: 10,
             ),
-            BtnApplyFilter(text1: 'Apply Filter',),
+            BtnApplyFilter(
+              text1: 'Apply Filter',
+            ),
           ],
         ),
       ),

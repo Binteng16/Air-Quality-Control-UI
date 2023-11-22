@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class ConActivityDetail extends StatelessWidget {
   const ConActivityDetail({Key? key, required this.img}) : super(key: key);
-  final Image img;
+  final AssetImage img;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ConActivityDetail extends StatelessWidget {
         children: <Widget>[
           Padding(
             padding: const EdgeInsets.only(left: 80, right: 80),
-            child: Image(image: AssetImage('assets/gasleak.png')),
+            child: Image(image: img),
           ),
           SizedBox(
             height: 40,
